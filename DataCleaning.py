@@ -1,3 +1,10 @@
+"""
+Customer Call List Data Cleaning Project
+This script cleans and preprocesses customer call list data from an Excel file.
+It removes duplicates, formats phone numbers, splits addresses, replaces values, 
+and drops contacts that do not want to be contacted.
+"""
+
 import pandas as pd
 
 # reading an excel file and assigning it the variable df
@@ -59,31 +66,5 @@ for x in df.index:
         df.drop(x, inplace = True)
 df
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# Save the cleaned dataframe to a new CSV file
+df.to_csv("Customer_Call_List_Cleaned.csv", index=False)
